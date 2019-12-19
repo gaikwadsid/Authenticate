@@ -3,6 +3,18 @@
 # Authenticate Password 2
 
 import json
+from flask import Flask, request, render_template
+
+app = Flask(__name__)
+
+
+@app.route('/')
+def home():
+    return "Hello World"
+ #   return render_template("converter.html")
+
+if __name__ == '__main__':
+    app.run()
 
 
 # Run the program

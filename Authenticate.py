@@ -64,19 +64,12 @@ def new_user():
             else:
                 n = 0
         users[username] = password
-        with open("database.json", "w") as f:
-            users = json.dump(users, f, indent=2)
+        with open("database.json", "w+") as f:
+            json.dump(users, f, indent=2)
+        f.close()
         return render_template("created.html", user=username)
 
 
-
-# Exits the program if the user wants to
-def program_exit():
-    Quit = input('Are you sure you want to exit? (y/n) ')
-    if (Quit == 'Y' or Quit == 'y'):
-        exit()
-    if (Quit == 'N' or Quit == 'n'):
-        main()
 
 
 

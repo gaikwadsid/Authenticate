@@ -20,8 +20,8 @@ def main():
         return render_template("Login.html")
     if (option == "2" or option == "Create New User Account"):
         return render_template("New_User.html")
-    if (option == "3"):
-        program_exit()
+    else:
+        return render_template("quit.html")
 
 
 
